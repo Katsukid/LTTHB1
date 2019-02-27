@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>@ViewBag.Title</title>
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="robots" content="all,follow">
+     <!-- Bootstrap CSS-->
+     @*<link rel="stylesheet" href="~/Assets/Client/vendor/bootstrap/css/bootstrap.min.css">*@
+     <link href="~/Assets/Client/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+     <!-- Font Awesome CSS-->
+     <link rel="stylesheet" href="~/Assets/Client/vendor/font-awesome/css/font-awesome.min.css">
+     <!-- Google fonts - Roboto -->
+     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100">
+     <!-- owl carousel-->
+     <link rel="stylesheet" href="~/Assets/Client/vendor/owl.carousel/assets/owl.carousel.css">
+     <link rel="stylesheet" href="~/Assets/Client/vendor/owl.carousel/assets/owl.theme.default.css">
+     <!-- theme stylesheet-->
+     <link rel="stylesheet" href="~/Assets/Client/css/style.default.css" id="theme-stylesheet">
+     <!-- Custom stylesheet - for your changes-->
+     <link rel="stylesheet" href="~/Assets/Client/css/custom.css">
+     <!-- Favicon-->
+     <link rel="shortcut icon" href="~/Assets/Client/favicon.png">
+     <!-- Tweaks for older IEs-->
+     <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+     <!-- DataTable-->
+     <link href="~/Assets/Client/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+     <script src="~/Assets/Client/vendor/jquery/jquery.min.js"></script>
+     <script src="~/Assets/Client/vendor/jquery.cookie/jquery.cookie.js"></script>
+     <script src="~/Assets/Client/js/dataTable/jquery.dataTables.min.js"></script>
+     <script src="~/Assets/Client/js/dataTable/dataTables.bootstrap4.min.js">
+     </script>
+     <script src="~/Assets/Client/js/controller/cartController.js"></script>
+     <script src="~/Assets/Client/js/controller/pagedList.js"></script>
+     @{
+          if (TempData["message"] != null)
+          {
+               <script type="text/javascript">
+               alert(@Html.Raw(Json.Encode(TempData["message"])));
+               </script>
+          }
+     }
+</head>
+<body>
+     <div class="container">
+          @RenderBody()
+     </div>
+     <!-- /#wrapper -->
+     <!-- jQuery -->
+
+     <script src="~/Assets/Client/vendor/popper.js/umd/popper.min.js"></script>
+     <script src="~/Assets/Client/vendor/bootstrap/js/bootstrap.min.js"></script>
+     <script src="~/Assets/Client/vendor/owl.carousel/owl.carousel.min.js"></script>
+     <script src="~/Assets/Client/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+     <script src="https://maps.googleapis.com/maps/api/js"></script>
+     <script src="~/Assets/Client/js/front.js"></script>
+</body>
+</html>

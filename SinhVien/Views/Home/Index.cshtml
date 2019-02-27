@@ -1,0 +1,82 @@
+﻿@model SinhVien.Entities.SINHVIEN
+@{
+     ViewBag.Title = "Home Page";
+
+}
+
+<div style="text-align:center" class="m-2">
+     <h1>Quản lý sinh viên</h1>
+</div>
+<div class="row mt-2">
+     <div class="container">
+          <form role="search" class="ml-auto" id="searchForm">
+               @Html.AntiForgeryToken()
+               <div class="input-group">
+                    <input autocomplete=off type="text" placeholder="Tìm kiếm" class="form-control search" id="searchBox" name="word">
+                    <div class="input-group-append">
+                         <button type="submit" class="btn btn-primary" id="search_btn"><i class="fa fa-search"></i></button>
+                    </div>
+               </div>
+               <div class="input-group" style="width:350px">
+                    <div class="input-group-append">
+                         <button type="button" class="btn btn-primary">Ngày sinh</button>
+                    </div>
+                    <input type="number" class="form-control search" placeholder="Ngày" id="Day" name="day" min=1 max=31/>
+                    <input type="number" class="form-control search" placeholder="Tháng" id="Month" name="month" min="1" max="12"/>
+                    <input type="number" class="form-control search" placeholder="Năm" id="Year" name="year" min="1800"/>
+               </div>
+               <div class="autocomplete" id="listAutoComplete"></div>
+          </form>
+     </div>
+     <script>searchEvent.init()</script>
+</div>
+<div class="mt-2">
+     <h2>Thao tác</h2>
+     <div id="infor">
+     @{ Html.RenderAction("Create", "SINHVIENs");}
+     </div>
+</div>
+<div>
+     <h2>Danh sách</h2>
+     <div id="index">
+          @{ Html.RenderAction("Index", "SINHVIENs");}
+     </div>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+               <div class="modal-body">
+                    Bạn có muốn lưu thay đổi ?
+               </div>
+               <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-primary" id="saveChangeBtn">Lưu</button>
+               </div>
+          </div>
+     </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+               <div class="modal-body">
+                    Bạn có muốn lưu thay đổi ?
+               </div>
+               <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-primary" id="saveChangeBtn">Lưu</button>
+               </div>
+          </div>
+     </div>
+</div>

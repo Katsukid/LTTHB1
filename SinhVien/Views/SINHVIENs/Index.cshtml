@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SinhVien.Entities.SINHVIEN>
+
+@{
+     int i = 0;
+}
+
+<table class="table">
+     <thead style="display:block;width:1000px">
+          <tr>
+               <th style="width:20px">#</th>
+               <th style="width:180px">
+                    @Html.DisplayNameFor(model => model.HOTEN)
+               </th>
+               <th style="width:100px">
+                    @Html.DisplayNameFor(model => model.NGAYSINH)
+               </th>
+               <th style="width:250px">
+                    @Html.DisplayNameFor(model => model.QUEQUAN)
+               </th>
+               <th style="width:100px">
+                    @Html.DisplayNameFor(model => model.DANTOC1.TEN)
+               </th>
+               <th style="width:200px">
+                    @Html.DisplayNameFor(model => model.LOP1.TEN)
+               </th>
+               <th style="width:100px"></th>
+          </tr>
+     </thead>
+     <tbody style="display:block;height:200px;width:1000px ;overflow-y:auto">
+          @foreach (var item in Model)
+          {
+               i++;
+               <tr>
+                    <td style="width:20px">@i</td>
+                    <td style="width:180px">
+                         @Html.DisplayFor(modelItem => item.HOTEN)
+                    </td>
+                    <td style="width:100px">
+                         @item.NGAYSINH.ToShortDateString()
+                    </td>
+                    <td style="width:250px">
+                         @Html.DisplayFor(modelItem => item.QUEQUAN)
+                    </td>
+                    <td style="width:100px">
+                         @Html.DisplayFor(modelItem => item.DANTOC1.TEN)
+                    </td>
+                    <td style="width:200px">
+                         @Html.DisplayFor(modelItem => item.LOP1.TEN)
+                    </td>     
+                    <td style="width:100px">
+                         <a href="#" data-id="@item.MA" class="edit">Edit</a>|
+                         <a href="#" data-id="@item.MA" class="delete">Delete</a>
+                    </td>
+               </tr>
+          }
+     </tbody>
+</table>
+
+<script>
+     deleteEvent.init();
+     editEvent.init();
+</script>
